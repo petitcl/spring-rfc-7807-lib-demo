@@ -19,8 +19,14 @@ As a reminder, the RFC 7807 defines that errors returned by JSON REST APIs shoul
 }
 ```
 
+This repo also contains some web integration tests that serve as examples of how the library can be used.
+More specifically, there are 2 int test classes:
+- `BookControllerWebTests` shows how the error responses would look like with the library but without any customisation
+- `CustomizerWebTests` shows how the error responses would look like with the library and with user defined customisation
+
 ## Features
 - Transform all generic exceptions to RFC 7807 format
 - Transform all Spring Web exceptions (eg: route not found, method not allowed, etc...) to RFC 7807 format
+- Support for internationalization of error messages via integration with Spring's `MessageSource`
 - Allow to provide beans to customize all error responses, for example for adding custom fields (eg: metadata, request id, etc...)
 - Allow to create custom exception handlers that can be used to transform specific exceptions to RFC 7807 format
